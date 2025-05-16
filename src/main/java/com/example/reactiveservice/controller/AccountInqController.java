@@ -11,9 +11,11 @@ import java.time.Duration;
 public class AccountInqController {
     private final AccountInqService  accountInqService;
     @PostMapping("/v1/accting")
-    public CompletableFuture<Object> accting(@Valid @RequestBody String payload) {
+    public Mono<Object> accting(@Valid @RequestBody String payload) {
         return accountInqService.sendAsyncMessage(payload);
     }
+
+
 
 
 }
